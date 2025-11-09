@@ -6,6 +6,8 @@ import { Geist, Barlow } from "next/font/google";
 import "./globals.css";
 //theme
 import { ThemeProvider } from "next-themes";
+//clerk provider
+import {ClerkProvider,} from '@clerk/nextjs'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en"suppressHydrationWarning>
       <body
         className={`${geistSans.className} ${barlowFont.variable}`}
@@ -43,5 +46,6 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
+    </ClerkProvider>
   );
 }

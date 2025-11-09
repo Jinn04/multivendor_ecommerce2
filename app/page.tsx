@@ -1,16 +1,16 @@
 import ThemToggle from "@/components/shared/theme-toggle";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+
+import { UserButton } from "@clerk/nextjs";
+
 
 export default function Home() {
   return (
     <div className="p-5">
-      <div className="w-100 flex justify-end"></div>
+      <div className="w-100 flex gap-x-5 justify-end"></div>
+      <UserButton/>
       <ThemToggle/>
-      <h1 className="fon-bold text-blue-500 font-barlow">
-        Welcome In GoShop
-        </h1>
-        <Button variant="destructive">Click here</Button>
+      <h1 className="fon-bold text-blue-500 font-barlow">Home Page</h1>
+       
     </div>
   );
 }
